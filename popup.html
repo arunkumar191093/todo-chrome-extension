@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .add-task-container {
+      width: 200px;
+    }
+
+    button {
+      height: 100%;
+      width: 100%;
+      margin: 8px 0px;
+      outline: none;
+      color: #fff;
+      background-color: #3aa757;
+      border-radius: 8px;
+    }
+
+    .task-input {
+      width: 190px;
+      padding: 5px;
+      border-radius: 2px;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #797979
+    }
+
+    input:not(:focus)~button {
+      color: #000;
+      background-color: #e8e8e8;
+      pointer-events: none;
+    }
+
+    input:focus:required:valid {
+      border-color: green;
+      box-shadow: 0 0 8px green;
+    }
+
+    .list-container {
+      max-height: 200px;
+      overflow: auto;
+      text-align: center;
+      border-top: 1px solid #a7a7a7;
+    }
+
+    .list-header {
+      padding: 4px;
+      /* border-bottom: 1px solid #a7a7a7; */
+      text-align: center;
+    }
+
+    .list-container ul {
+      padding-inline-start: 0px;
+    }
+
+    .task-item {
+      padding: 4px;
+      padding-right: 12px;
+      text-align: left;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .task-item label {
+      display: flex;
+    }
+
+    .task-item div {
+      padding-left: 10px;
+      max-width: 120px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .task-item input:checked~div {
+      text-decoration: line-through;
+    }
+
+    .remove {
+      padding: 4px;
+      cursor: pointer;
+    }
+    .clear{
+      display: flex;
+      justify-content: flex-end;
+      cursor: pointer;
+      margin: 6px;
+      color: #0070ff;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="todo-form">
+    <div class="add-task-container">
+      <div class="list-header">TODO Items</div>
+      <input id="task-inputbox" class="task-input" type="text" placeholder="Enter task" autocomplete="off" />
+      <button id="addTask">Add Task</button>
+      <a id="clear-all" class="clear">Clear all</a>
+      <div class="list-container">
+        <ul id="task-list">
+        </ul>
+      </div>
+    </div>
+  </form>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
