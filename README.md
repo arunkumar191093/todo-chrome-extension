@@ -1,3 +1,7 @@
+TODO List Chrome Extension
+
+This extension will show a todo list, and the states of the items will remain even in private browsing.
+
 The directory holding the manifest file can be added as an extension in developer mode in its current state.
 
 - Open the Extension Management page by navigating to chrome://extensions.
